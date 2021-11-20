@@ -321,10 +321,10 @@ class Bricks():
 class Brick(axes.Axes): 
     _figure   = plt.figure(figsize=(1,1))   
     _labelset = set([]) 
-    def __init__(self, label=None, figsize=(1,1)):
+    def __init__(self, label=None, figsize=(1,1), projection="rectilinear"):
         global _axes_dict
         if "__base__" not in _axes_dict:
-            ax = Brick._figure.add_axes([0,0,1,1], label="__base__")
+            ax = Brick._figure.add_axes([0,0,1,1], label="__base__", projection=projection)
             ax.set_axis_off()
             ax.patch.set_alpha(0.0) 
             _axes_dict["__base__"] = ax 
